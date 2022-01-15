@@ -1,6 +1,3 @@
-# Stats and Machine learning coursework 2 code
-install.packages(stargazer)
-
 # Importing the data into R
 titan <- read.csv("titanic.csv", header = TRUE)
 attach(titan)
@@ -8,7 +5,7 @@ attach(titan)
 # Check for missing values
 any(is.na(titan))
 
-# Part 1: Predicting survival based on sex of passenger
+# Predicting survival based on sex of passenger
 # Fitting our logistic regression model
 model1 <- glm(Survived ~ Sex, family = binomial)
 
@@ -26,7 +23,7 @@ print(probability_female <- odds_female/(1+odds_female))
 
 # 74% chance of survival as a female
 
-# Part 2: Predicting probability of Jack's survival
+# Predicting probability of Jack's survival
 
 # Model 2: All variables in the dataset
 model_all <- glm(Survived ~ Sex + factor(Pclass) + Age + Siblings.Spouses.Aboard +
